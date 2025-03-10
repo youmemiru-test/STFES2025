@@ -1,47 +1,35 @@
-.jp_slide_img_wrapper {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    background-image: url('../img/test_image8.jpg');
-    background-repeat: repeat-x;
-    background-size: cover;
-    background-position: 0 0;
-    animation-name: slide_img;
-    animation-duration: 200s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+.loop {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    overflow: hidden;
+}
+.loop__box {
+    display: flex;
+    width: 100vw;
+}
+.loop__box img {
+    min-width: 100vw;
+}
+.loop__box img:first-child {
+    animation: loop 50s -25s linear infinite;
+}
+.loop__box img:last-child {
+    animation: loop2 50s linear infinite;
 }
 
-@keyframes slide_img {
-    100% {
-        background-position: -10000px 0;
-        }
+@keyframes loop {
+    0% {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
 }
-.jp_slide_img_overlay{
-    position: absolute;
-    top: 0%;
-    right: 0%;
-    left: 0%;
-    bottom: 0%;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(46, 36, 100, 0.4);
-}
-.main_catch {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    text-align: center;
-    transform: translateY(-50%) translateX(-50%);
-    -webkit- transform: translateY(-50%) translateX(-50%);
-}
-
-.main_catch .logo {
-    max-width: 250px;
-    margin: 0 auto 15px;
-}
-.main_catch .logo img {
-    max-width: 100%;
-    height: auto;
+@keyframes loop2 {
+    0% {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-200%);
+    }
 }
