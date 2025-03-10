@@ -1,35 +1,30 @@
-.loop {
+.loop02 {
     padding-top: 30px;
     padding-bottom: 30px;
+    display: flex;
     overflow: hidden;
 }
-.loop__box {
+.loop02__box {
     display: flex;
-    width: 100vw;
+    animation: loop-list 50s linear infinite;
 }
-.loop__box img {
-    min-width: 100vw;
+.loop02__item a {
+    width: calc(100vw / 4);
+    display: block;
 }
-.loop__box img:first-child {
-    animation: loop 50s -25s linear infinite;
-}
-.loop__box img:last-child {
-    animation: loop2 50s linear infinite;
+.loop02__item img {
+    width: 100%;
 }
 
-@keyframes loop {
-    0% {
-        transform: translateX(100%);
+
+@keyframes loop-list {
+    from {
+        transform: translateX(0);
     }
     to {
         transform: translateX(-100%);
     }
 }
-@keyframes loop2 {
-    0% {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-200%);
-    }
+.loop02:hover .loop02__box {
+    animation-play-state: paused;
 }
